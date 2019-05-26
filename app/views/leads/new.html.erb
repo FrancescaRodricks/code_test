@@ -1,0 +1,71 @@
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <a href="/">
+    <img alt="logo" src="//images.ctfassets.net/bhseysg1j3yc/4nzUieGA5qqEOSOWc4uaWC/502d56da6668c8c9039ea18dbd5f2f89/makeitcheaper-logo-black.png">
+  </a>
+  <h5>Welcome to the new, fairer way to switch your business utilities</h5>
+</div>
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8">
+      <div class="white-box">
+        <% if @lead.errors.any? %>
+          <div id="error_explanation">
+            <div class="alert alert-danger alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <ul>
+              <% @lead.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+        <% if flash['success'].present?  %>
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Success!</strong>
+            <%= flash['success'] %>
+          </div>
+        <% end %>
+        <% if flash['error'].present?  %>
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Error!</strong>
+            <%= flash['error'] %>
+          </div>
+        <% end %>
+        <div style="margin:20px 0 25px 0;">
+          <h3><b>Enter your details here</b></h3>
+          <%= form_for :lead, url: leads_path, local: true do |form| %>
+            <%= form.hidden_field :paccname, value: api_paccname %>
+            <%= form.hidden_field :pguid, value: api_pguid %>
+            <%= form.hidden_field :ppartner, value: api_ppartner %>
+          <div class="form-group">
+            <%= form.label 'Name' %>
+            <%= form.text_field :name, value: @lead.name, placeholder: "Your full name. eg: John Doe", class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= form.label 'Business Name' %>
+            <%= form.text_field :business_name, value: @lead.business_name, placeholder: "Your company name", class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= form.label 'Telephone Number' %>
+             <%= form.text_field :telephone_number, value: @lead.telephone_number, placeholder: "Your telephone number", class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= form.label 'Email' %>
+            <%= form.text_field :email, value: @lead.email, placeholder: "Your email address", class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= form.submit 'SUBMIT', class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>
