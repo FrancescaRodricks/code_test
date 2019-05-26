@@ -12,24 +12,22 @@ module LeadsHelper
   end
 
   def validation_error_messages(response)
-    response.map do |error|
-      error_msg_collection = error.split("'")
-      @lead.errors.messages[error_msg_collection[1]] << error_msg_collection[-1]
+    response.each do |error|
+      error.split(",").each do |err|
+        error_msg_collection = err.split("'")
+        @lead.errors.messages[error_msg_collection[1]] << error_msg_collection[-1].strip
+      end
     end
   end
 end
 
 class LeadsController < ApplicationController
-  before_action :initialize_lead, only: [:new, :create]
-
-  def initialize_lead
+  def new
     @lead = Lead.new
   end
 
-  def new
-  end
-
   def create
+    @lead = Lead.new(lead_params)
     api_request_params = helpers.api_params lead_params.to_h
     response = LeadService.create api_request_params
     if response[:success]
