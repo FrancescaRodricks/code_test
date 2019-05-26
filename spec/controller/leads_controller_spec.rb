@@ -95,7 +95,8 @@ RSpec.describe LeadsController, type: :controller do
         expect(LeadService)
           .to receive(:create)
           .with(api_request_params.merge(customer_info)) { response_hash }
-        expect(subject).to render_template("new")
+        expect(subject)
+          .to render_template("new")
       end
     end
   end

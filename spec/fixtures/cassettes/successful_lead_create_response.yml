@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test_lead_api/api/v1/api/v1/create
+    body:
+      encoding: US-ASCII
+      string: name=John+Doe&business_name=Test+Inc.&telephone_number=07678977833&email=john.doe%40example.com&pGUID=c5b88f56-00e8-11e8-ba89-0ed5f89f718b&pAccName=test_paccname&pPartner=test_ppartner&access_token=test_access_token
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - test_lead_api
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"a3647de73f830d5cb5c63d7ccddd62ec"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.018077'
+      X-Request-Id:
+      - 2a3db183-8a7b-4d00-b469-ed7200a900f5
+      Date:
+      - Sun, 26 May 2019 09:58:03 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.1.12
+      - cloud66
+      Server:
+      - nginx + Phusion Passenger 5.1.12
+    body:
+      encoding: UTF-8
+      string: '{"message":"Enqueue success","errors":[]}'
+    http_version:
+  recorded_at: Sun, 26 May 2019 09:58:03 GMT
+recorded_with: VCR 4.0.0

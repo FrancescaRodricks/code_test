@@ -4,7 +4,7 @@ module LeadsHelper
   end
 
   def api_params(params)
-      params[:pGUID] = params.delete(:pguid)
+    params[:pGUID] = params.delete(:pguid)
     params[:pAccName] = params.delete(:paccname)
     params[:pPartner] = params.delete(:ppartner)
     params[:access_token] = api_access_token

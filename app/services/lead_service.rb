@@ -2,7 +2,7 @@ require 'net/http'
 
 module LeadService
   SUCCESS_MESSAGE = "Thank you for using Make It Cheaper! We have received your request and one of our team will be in touch soon.".freeze
-  BASE_API_URI = ENV['LEAD_API_URI']
+  BASE_API_URI = Rails.application.config.lead_api_base_uri
 
   def self.create(params)
     uri = URI("#{BASE_API_URI}/api/v1/create")
