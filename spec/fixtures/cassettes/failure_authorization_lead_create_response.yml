@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test_lead_api/api/v1/api/v1/create
+    body:
+      encoding: US-ASCII
+      string: name=John+Doe&business_name=Test+Inc.&telephone_number=07678977833&email=john.doe%40example.com&pGUID=c5b88f56-00e8-11e8-ba89-0ed5f89f718b&pAccName=test_paccname&pPartner=test_ppartner&access_token=test_access_token
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - test_lead_api
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 401 Unauthorized
+      Cache-Control:
+      - no-cache
+      X-Runtime:
+      - '0.004553'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 18fd0516-864a-491a-9bbd-7df2b057a788
+      Date:
+      - Sun, 26 May 2019 10:47:28 GMT
+      X-Powered-By:
+      - Phusion Passenger 5.1.12
+      Server:
+      - nginx + Phusion Passenger 5.1.12
+    body:
+      encoding: UTF-8
+      string: '{"message":"Unauthorised access_token"}'
+    http_version:
+  recorded_at: Sun, 26 May 2019 10:47:28 GMT
+recorded_with: VCR 4.0.0
