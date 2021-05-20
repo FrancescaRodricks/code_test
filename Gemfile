@@ -10,7 +10,7 @@ gem 'httparty'
 gem 'jquery-rails'
 gem 'mini_racer', platforms: :ruby
 gem 'popper_js', '~> 1.14.3'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'rails', '~> 5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
